@@ -3,40 +3,33 @@
 
 // Definition of the non dynamic stack object.
 typedef struct stack {
-	int top ; // Initialisation of the top indicator. Is set as -1 to indicate an empty stack.
+	int top ; // Initialisation of the top indicator. 
 	int arr[SIZE]; // The table that will hold the values of our stack.
 } Stack;
 
-// Function that initialises the stack
+// Function that initialises the stack.
 void initStack(Stack *s) {
-	s->top = -1;
+	s->top = -1; //The top indicator is set as -1 to indicate an empty stack.
 }
 
 // Function that checks whether a non dynamic stack is empty.
 int stackIsEmpty(Stack *s) {
 	if (s->top == -1) {
 		// Since the stack is being implemented using a non dynamic structure - a table -
-		//if the indicator for the position of top is -1, the table must be empty.
+		//if the indicator for the position of top is equal to -1, the stack must be empty.
 		printf("The stack is empty! "); 
 		return 1; // Logical true.
-	}
-	return 0; // Logical false.
+	} else return 0; // Logical false.
 }
 
-// Function that checks whether a non dynamic stack is empty.
+// Function that checks whether a non dynamic stack is full.
 int stackIsFull(Stack *s) {
 	if (s->top == SIZE - 1) {
 		// Since the stack is being implemented using a non dynamic structure - a table -
 		//if the indicator for the position of top is equal to SIZE - 1, the table must be full.
 		printf("The stack is full! ");
 		return 1; // Logical true.
-	}
-	return 0; // Logical false.
-}
-
-// Function that returns the current size of the stack.
-int size(Stack *s) {
-	return (s->top) + 1; // We return this since the table's first position is 0.
+	} else return 0; // Logical false.
 }
 
 // Function that pushes a provided integer to the stack, if possible.
@@ -46,6 +39,7 @@ int push(Stack *s, int num) {
 		printf("Pushing of %d to the stack has failed.\n", num);
 		return -1; // Error indicator.
 	}
+	
 	(s->top)++;
 	s->arr[s->top] = num;
 	return 0; // Process completed successfully.
@@ -88,6 +82,11 @@ void printStack(Stack *s) {
 	for (i=s->top; i>=0; i--) {
 		printf("\n%d",s->arr[i]);
 	}
+}
+
+// Function that returns the current size of the stack.
+int size(Stack *s) {
+	return (s->top) + 1; // We return this since the table's first position is 0.
 }
 
 // Example code containing the usage for all functions.
