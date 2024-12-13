@@ -33,7 +33,7 @@ int QueueIsFull(Queue *q) {
 	} else return 0; // Logical false.
 }
 
-// Function that pushes a provided integer to the queue, if possible.
+// Function that adds a provided integer to the queue, if possible.
 int Enqueue(Queue *q, int num) {
 	if (QueueIsFull(q)) {
 		// If the queue is full, pushing into it is impossible.
@@ -46,7 +46,7 @@ int Enqueue(Queue *q, int num) {
 	return 1; // Process completed successfully.
 }
 
-// Function that pop an integer from the queue in the position "front" if possible.
+// Function that removes an integer from the queue in the position "front" if possible.
 int Dequeue(Queue *q) {
 	if (QueueIsEmpty(q)) {
 		// If the queue is full, poping from it is impossible.
@@ -65,7 +65,7 @@ int Dequeue(Queue *q) {
 	return num; // the integer that was removed from the queue.
 }
 
-// Function that returns
+// Function that returns the first member of the queue.
 int First(Queue *q) {
 	// Ensuring that the queue has at least one integer before attempting to read from it.
 	if (QueueIsEmpty(q)) {
@@ -73,9 +73,10 @@ int First(Queue *q) {
 		return -1; // Error indicator.
 	}
 	
-	return q->arr[q->front++];
+	return q->arr[q->front+1];
 }
 
+// Function that returns the last member of the queue.
 int Last(Queue *q) {
 	// Ensuring that the queue has at least one integer before attempting to read from it.
 	if (QueueIsEmpty(q)) {
@@ -86,12 +87,14 @@ int Last(Queue *q) {
 	return q->arr[q->rear];
 }
 
+// Function that returns the current size of the queue.
 int QueueSize(Queue *q) {
 	return q->rear - q->front;
 	// In any case of the current implementation, the correct size will be outputed by the
 	// above calculation. 
 }
 
+// Function that prints the queue.
 void PrintQueue(Queue *q) {
 	// Ensuring that the queue has at least one integer before attempting to print its contents.
 	if (QueueIsEmpty(q)) {
@@ -100,24 +103,27 @@ void PrintQueue(Queue *q) {
 	}
 	
 	int i;
+	printf("Queue: ");
 	// Printing of the queue's contents
 	for (i=(q->front)+1; i<=(q->rear); i++) {
-		printf("|%d|", q->arr[i]);
+		printf("|%d", q->arr[i]);
 	}
-	printf("\n");
+	printf("|\n");
 }
 
 // Example code containing the usage for all functions.
 int main(void) {
 	Queue q;
 	int num;
+	initQueue(&q);
 	num = Dequeue(&q);
 	Enqueue(&q,5);
 	Enqueue(&q,3);
 	Enqueue(&q,4);
-	printf("%d", First(&q));
-	printf("%d", Last(&q));
+	printf("First: %d\n", First(&q));
+	printf("Last: %d\n", Last(&q));
 	PrintQueue(&q);
 	num = Dequeue(&q);
 	num = Dequeue(&q);
+	return 0;
 }
