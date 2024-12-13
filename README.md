@@ -12,7 +12,7 @@ This project's code is explained to a very good extend to allow for easy underst
 
 Want to help me expand this repository to include more structures? Found a bug or you want to suggest a change whithin my code? Contributions are always welcome from everyone! I will be regurarly be reviewing and accepting any contributions that may happen.
 
-<h2 align="center">Currently offered data structures</h1>
+<h2 align="center">Currently available data structures and future additions</h1>
 
 1. Stacks
    - [Non Dynamic Stack](/Stack.c)
@@ -20,3 +20,5 @@ Want to help me expand this repository to include more structures? Found a bug o
 2. Queues
    - [Non Dynamic Queue](/Queue.c)
    - [Non Dynamic Circular Queue](/CQueue.c)
+
+Working on: Dynamic Queues, BSTs (Binary Search Trees), Priority Queues, Red-Black Trees, AVL Trees
