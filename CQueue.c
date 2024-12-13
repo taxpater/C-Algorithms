@@ -35,7 +35,7 @@ int CQueueIsFull(CQueue *q) {
 	} else return 0; // Logical false.
 }
 
-// Function that pushes a provided integer to the circular queue, if possible.
+// Function that adds a provided integer to the circular queue, if possible.
 int Enqueue(CQueue *q, int num) {
 	if (CQueueIsFull(q)) {
 		// If the circular queue is full, pushing into it is impossible.
@@ -57,6 +57,7 @@ int Enqueue(CQueue *q, int num) {
 	return 1; // Process completed successfully.
 }
 
+// Function that removes an integer from the circular queue, if possible.
 int Dequeue(CQueue *q) {
 	// Holding the current value of the front, in preparation to remove it from the queue.
 	int data = q->arr[q->front];
@@ -80,6 +81,7 @@ int Dequeue(CQueue *q) {
 	return data;
 }
 
+// Function that returns the first member of the circular queue.
 int First(CQueue *q) {
 	// Ensuring that the queue has at least one integer before attempting to read from it.
 	if (CQueueIsEmpty(q)) {
@@ -90,6 +92,7 @@ int First(CQueue *q) {
 	return q->arr[q->front];
 }
 
+// Function that returns the last member of the circular queue.
 int Last(CQueue *q) {
 	// Ensuring that the queue has at least one integer before attempting to read from it.
 	if (CQueueIsEmpty(q)) {
@@ -99,7 +102,7 @@ int Last(CQueue *q) {
 	
 	return q->arr[q->rear];
 }
-
+// Function that returns the current size of the circular queue.
 int QueueSize(CQueue *q) {
 	if (q->rear >= q->front) {
 		return q->rear - q->front + 1;
@@ -109,6 +112,7 @@ int QueueSize(CQueue *q) {
 	}
 }
 
+// Function that prints the circular queue.
 void PrintQueue(CQueue *q) {
 	int i;
 	// If the queue is empty, there is nothing to print from it.
