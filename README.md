@@ -16,6 +16,7 @@ Want to help me expand this repository to include more structures? Found a bug o
 
 1. Stacks
    - [Non Dynamic Stack](/Stack.c)
+   - [Dynamic Stack](/DynStack.c)
 2. Queues
    - [Non Dynamic Queue](/Queue.c)
    - [Non Dynamic Circular Queue](/CQueue.c)
