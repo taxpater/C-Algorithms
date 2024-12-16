@@ -30,6 +30,16 @@ int DynQueueIsEmpty(DynQueue *q) {
 	} else return 0; // Logical false.
 }
 
-void DynQueuePush(DynQueue *qm int num) {
-	
+void DynQueueEnqueue(DynQueue *qm int num) {
+	Node *new_node = (Node*)malloc(sizeof(Node));
+	new_node->key=val;
+	if (q->size==0) {
+		q->front = new_node;
+	}
+	else {
+		(q->rear)->next = new_node;
+	}
+	q->rear = new_node;
+	new_node->next = NULL;
+	q->size++;
 }
