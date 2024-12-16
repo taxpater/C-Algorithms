@@ -21,7 +21,7 @@ void DynStackInit(DynStack *s) {
 
 // Function that checks whether a dynamic stack is empty using the size value of the DynStack struct.
 int DynStackIsEmpty(DynStack *s) {
-	// Checking whether 
+	// Checking whether the stac
 	if (!s->size) {
 		printf("\nThe stack is empty! ");
 		return 1; // Logical true.

@@ -1,4 +1,4 @@
-#include <stdio.h>
+include <stdio.h>
 #define SIZE 10
 
 // Definition of the non dynamic queue object.

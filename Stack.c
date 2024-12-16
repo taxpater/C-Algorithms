@@ -1,4 +1,4 @@
-#include <stdio.h>
+<<<<<<< HEAD#include <stdio.h>
 #define SIZE 10
 
 // Definition of the non dynamic stack object.
