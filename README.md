@@ -20,5 +20,6 @@ Want to help me expand this repository to include more structures? Found a bug o
 2. Queues
    - [Non Dynamic Queue](/Queue.c)
    - [Non Dynamic Circular Queue](/CQueue.c)
+   - [Dynamic Queue](/DynQueue.c)
 
-Working on: Dynamic Queues, BSTs (Binary Search Trees), Priority Queues, Red-Black Trees, AVL Trees
+Working on: BSTs (Binary Search Trees), Priority Queues, Red-Black Trees, AVL Trees
