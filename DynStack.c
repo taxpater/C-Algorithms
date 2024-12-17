@@ -21,7 +21,7 @@ void DynStackInit(DynStack *s) {
 
 // Function that checks whether a dynamic stack is empty using the size value of the DynStack struct.
 int DynStackIsEmpty(DynStack *s) {
-	// Checking whether the stac
+	// Checking whether the stack's size is 0, which means its empty.
 	if (!s->size) {
 		printf("\nThe stack is empty! ");
 		return 1; // Logical true.
@@ -36,9 +36,10 @@ void DynStackPush(DynStack *s, int num) {
 	s->size++;
 	s->top = newNode; 
 }
+
 // Function that pops from the provided dynamic stack.
 int DynStackPop(DynStack *s) {
-	// Ensuring that the dynamic queue has at least one member before attempting to pop from it.
+	// Ensuring that the dynamic stack has at least one member before attempting to pop from it.
 	if (!DynStackIsEmpty(s)) {
 		int num = (s->top)->key;
 		Node *tmp = s->top;
@@ -46,12 +47,15 @@ int DynStackPop(DynStack *s) {
 		s->size--;
 		free(tmp);
 		return num;
-	} else return -1; // Error indicator.
+	} else {
+		printf("There is nothing to pop!");
+		return -1; // Error indicator.
+	}
 }
 
 // Function that returns the value of the first integer in the stack.
 int DynStackTop(DynStack *s) {
-	// Ensuring that the dynamic queue has at least one member before attempting to find it's top.
+	// Ensuring that the dynamic stack has at least one member before attempting to find it's top.
 	if (DynStackIsEmpty(s)) {
 		printf("There is no top.");
 		return -1; // Error indicator showing that there is no top (empty stack).
@@ -65,7 +69,7 @@ int DynStackSize(DynStack *s) {
 
 // Function that prints the dynamic stack.
 void DynStackPrint(DynStack *s) {
-	// Ensuring that the dynamic queue has at least one member before attempting to write it's contents.
+	// Ensuring that the dynamic stack has at least one member before attempting to write it's contents.
 	if (DynStackIsEmpty(s)) {
 		printf("Cannot print an empty stack.");
 	} else {
