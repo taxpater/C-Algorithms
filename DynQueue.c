@@ -12,7 +12,7 @@ typedef struct DynQueue {
 	int size;
 	Node *front;
 	Node *rear;
-} DynStack;
+} DynQueue;
 
 // Function that initialises the dynamic queue.
 void DynQueueInit(DynQueue *q) {
@@ -30,16 +30,16 @@ int DynQueueIsEmpty(DynQueue *q) {
 	} else return 0; // Logical false.
 }
 
-void DynQueueEnqueue(DynQueue *qm int num) {
-	Node *new_node = (Node*)malloc(sizeof(Node));
-	new_node->key=val;
+void DynQueueEnqueue(DynQueue *q, int num) {
+	Node *new_node = (Node*)malloc(sizeof(Node));
+	new_node->key=num;
 	if (q->size==0) {
-		q->front = new_node;
+		q->front = new_node;
 	}
 	else {
-		(q->rear)->next = new_node;
+		(q->rear)->next = new_node;
 	}
-	q->rear = new_node;
-	new_node->next = NULL;
-	q->size++;
+	q->rear = new_node;
+	new_node->next = NULL;
+	q->size++;
 }
